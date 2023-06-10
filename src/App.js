@@ -3,6 +3,7 @@ import "./App.css";
 
 const App = () => {
   const [actors, setActors] = useState([]);
+  // issue with the API provider
   // const [validationResponse, setValidationResponse] = useState("");
   const [filteredNicolasCageMovies, setFilteredNicolasCageMovies] = useState([]);
   const [filteredKeanuReevesMovies, setFilteredKeanuReevesMovies] = useState([]);

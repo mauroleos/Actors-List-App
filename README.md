@@ -24,4 +24,4 @@ Please note that there might be an issue with the API provider. The code has bee
 
 # Author
 
-<strong>Mauro Leos</strong> - <i>Software Developer</i> - <a href="https://www.linkedin.com/in/mauro-leos-b4103a11b/">LinkedIn </a>
+<strong>Mauro Leos</strong> - <i>Front-End Developer</i> - <a href="https://www.linkedin.com/in/mauro-leos-b4103a11b/">LinkedIn </a>
