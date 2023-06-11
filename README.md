@@ -6,8 +6,7 @@ The goal of the Actors List App is to display a list of actors who have appeared
 
 To run this application locally, follow these steps:
 
-- Clone the repository: git clone <repository-url>
-- Navigate to the project directory: cd actors-list-app
+- Open zip folder
 - Install dependencies: npm install
 - Start the development server: npm start
 - Open your web browser and visit http://localhost:3000 to see the app in action.
