@@ -12,15 +12,24 @@ Install dependencies: npm install
 Start the development server: npm start
 Open your web browser and visit http://localhost:3000 to see the app in action.
 
-# Usage
+# Features
 
-Upon launching the Actors List App, it will fetch movies and actors data from the respective APIs. The movies are filtered to include only those featuring both Nicolas Cage and Keanu Reeves. The actors are then filtered based on the movies they appeared in, considering only the filtered movies.
+Fetches a list of movies and actors from an API.
+Filters the movies to retrieve only those featuring Nicolas Cage and Keanu Reeves.
+Filters the actors based on the movies they appeared in.
+Sends a validation request to another API with the filtered data.
+Displays the list of actors and their IDs.
+Displays the response status from the validation request.
 
-The filtered actors list will be displayed on the page, showing each actor's name and ID. Additionally, the app performs a validation request to another API to validate the actors' information and displays the response.
+# Configuration
 
-# Known Issue
+The application uses an access token to authenticate API requests. You can replace the accessToken variable in the code with your own token if required.
 
-Currently, the app encounters an issue with the validation API. The response from the API is empty, indicating that the API returned an empty response. This could be due to an issue with the API provider or if there is no data available for the given request.
+# API Endpoints
+
+Movies API: https://switch-yam-equator.azurewebsites.net/api/movies
+Actors API: https://switch-yam-equator.azurewebsites.net/api/actors
+Validation API: https://switch-yam-equator.azurewebsites.net/api/validation
 
 # Author
 
