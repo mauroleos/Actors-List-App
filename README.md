@@ -1,26 +1,26 @@
 # Actors List App
 
-This is a React application that displays a list of actors based on certain criteria and fetches data from an external API. The application utilizes the React hooks useState and useEffect for managing state and performing side effects respectively.
+The goal of the Actors List App is to display a list of actors who have appeared in a movie with both Nicolas Cage and Keanu Reeves. The app fetches data from two APIs: one for retrieving movies and another for retrieving actors. It then filters the actors based on the movies they appeared in and displays the filtered list.
 
-# Installation
+# Getting Started
 
 To run this application locally, follow these steps:
 
 Clone the repository: git clone <repository-url>
 Navigate to the project directory: cd actors-list-app
-Install the dependencies: npm install
+Install dependencies: npm install
 Start the development server: npm start
-Open your browser and visit http://localhost:3000
+Open your web browser and visit http://localhost:3000 to see the app in action.
 
 # Usage
 
-Upon launching the application, it fetches data from the API to retrieve a list of movies and actors. It then filters the movies based on actors' IDs to find movies featuring Nicolas Cage and Keanu Reeves.
+Upon launching the Actors List App, it will fetch movies and actors data from the respective APIs. The movies are filtered to include only those featuring both Nicolas Cage and Keanu Reeves. The actors are then filtered based on the movies they appeared in, considering only the filtered movies.
 
-The filtered movies are used to determine the actors who appeared in both Nicolas Cage and Keanu Reeves movies. The resulting list of actors is displayed on the page.
+The filtered actors list will be displayed on the page, showing each actor's name and ID. Additionally, the app performs a validation request to another API to validate the actors' information and displays the response.
 
-Additionally, the application performs a validation request using the filtered actors, Nicolas Cage movies, and Keanu Reeves movies. The validation response is logged in the console.
+# Known Issue
 
-Please note that there might be an issue with the API provider. The code has been tested using Postman, and the API returned a successful response with a status of "200 OK." If you encounter any errors or empty responses, the issue might be related to the API provider's end.
+Currently, the app encounters an issue with the validation API. The response from the API is empty, indicating that the API returned an empty response. This could be due to an issue with the API provider or if there is no data available for the given request.
 
 # Author
 

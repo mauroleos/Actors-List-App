@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./App.css"; 
+import "./App.css";
 
 const App = () => {
   const [actors, setActors] = useState([]);
   // issue with the API provider
-  // const [validationResponse, setValidationResponse] = useState("");
+  const [validationResponse, setValidationResponse] = useState("");
   const [filteredNicolasCageMovies, setFilteredNicolasCageMovies] = useState([]);
   const [filteredKeanuReevesMovies, setFilteredKeanuReevesMovies] = useState([]);
 
@@ -96,6 +96,10 @@ const App = () => {
     keanuReevesMovies
   ) => {
     try {
+      // console.log(`actors: ${JSON.stringify(actors)}`);
+      // console.log(`nicolasCageMovies: ${JSON.stringify(nicolasCageMovies)}`);
+      // console.log(`keanuReevesMovies: ${JSON.stringify(keanuReevesMovies)}`);
+
       const accessToken = "d05c80d4-4a5f-46c7-85e7-ec0dff18b7fe";
 
       // Prepare validation data
@@ -109,6 +113,8 @@ const App = () => {
           .filter((movie) => movie.actors.includes(actor.actorId))
           .map((movie) => movie.title),
       }));
+
+      console.log(`validationData: ${JSON.stringify(validationData)}`);
 
       // Perform validation request
       const response = await fetch(
@@ -129,9 +135,22 @@ const App = () => {
         );
       }
 
-      const responseData = await response.json();
-      console.log("Validation Response:", responseData);
-      // setValidationResponse(JSON.stringify(responseData));
+      const responseData = await response.text();
+
+      // Validate if response data is not empty
+      if (!responseData || responseData.trim() === "") {
+        throw new Error("Validation API returned an empty response");
+      }
+
+      let parsedResponse;
+      try {
+        parsedResponse = JSON.parse(responseData);
+      } catch (error) {
+        throw new Error("Validation API returned invalid JSON");
+      }
+
+      console.log("Validation Response:", parsedResponse);
+      setValidationResponse(JSON.stringify(parsedResponse));
     } catch (error) {
       console.log("Error:", error);
     }
@@ -142,13 +161,17 @@ const App = () => {
       <h1 className="title">Actors List</h1>
       <ul className="actor-list">
         {actors.map((actor) => (
-          <li className="actor-item" key={actor.actorId}>
+          <li className="list-item" key={actor.actorId}>
             {actor.name} (ID: {actor.actorId})
           </li>
         ))}
       </ul>
-      {/* <h1 className="title">Validation Response</h1> */}
-      {/* <pre className="validation-response">{validationResponse}</pre> */}
+      <h2 className="title">Validation Response</h2>
+      <pre className="list-item">
+        {validationResponse.length === 0
+          ? "API returned an empty response"
+          : validationResponse}
+      </pre>
     </div>
   );
 };

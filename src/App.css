@@ -24,7 +24,7 @@
 }
 
 
-.actor-item {
+.list-item {
   background-color: #f0f6f9;
   padding: 10px;
   margin-bottom: 10px;
@@ -34,18 +34,10 @@
   transition: background-color 0.3s ease;
 }
 
-.actor-item:hover {
+.list-item:hover {
   background-color: #c5e4f3;
 }
 
-.validation-response {
-  background-color: #f0f6f9;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  white-space: pre-wrap;
-  color: #333;
-}
 
 /* Colors */
 
@@ -57,15 +49,12 @@
   background-color: #ff8b6e;
 }
 
-.actor-item {
+.list-item {
   background-color: #f0f6f9;
 }
 
-.actor-item:hover {
+.list-item:hover {
   background-color: #c5e4f3;
 }
 
-.validation-response {
-  background-color: #f0f6f9;
-  color: #333;
-}
+
