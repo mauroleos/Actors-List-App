@@ -2,7 +2,7 @@
 
 The goal of the Actors List App is to display a list of actors who have appeared in a movie with both Nicolas Cage and Keanu Reeves. The app fetches data from two APIs: one for retrieving movies and another for retrieving actors. It then filters the actors based on the movies they appeared in and displays the filtered list.
 
-<img src="React-meals.png" alt="image">
+<img src="actors-list.png" alt="image">
 
 # Getting Started
 
